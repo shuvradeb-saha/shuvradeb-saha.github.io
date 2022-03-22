@@ -40,7 +40,7 @@ export default function Header() {
   const renderPersonInfo = (info) => {
     const { icon, value } = info;
     return (
-      <div className="profile_item">
+      <div key={value} className="profile_item">
         <span>
           <FAIcon icon={icon} />
         </span>
@@ -58,7 +58,7 @@ export default function Header() {
   };
 
   const renderSiteInfo = ({ icon, link, label }) => (
-    <div className="profile_item">
+    <div key={label} className="profile_item">
       <span>
         <FAIcon icon={icon} />
       </span>
