@@ -39,7 +39,7 @@
 }
 
 .header .profile_pic .bio {
-  background-color: #c5bfbf;
+  background-color: #c3cbceb0;
   padding: 5px 30px;
   color: #000;
   border-radius: 50px;
@@ -115,6 +115,47 @@ body {
   font-family: "Nunito", sans-serif;
   font-weight: 400;
   font-size: 18px;
+  /* Extra small devices (phones, 600px and down) */
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  /* Medium devices (landscape tablets, 768px and up) */
+  /* Large devices (laptops/desktops, 992px and up) */
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  body {
+    width: auto;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body {
+    width: auto;
+  }
 }
 
 .App {

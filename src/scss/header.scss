@@ -1,7 +1,6 @@
 @import "colors.scss";
 
 .header {
-  height: 30%;
   display: flex;
   justify-content: space-between;
   padding: 15px;
@@ -48,6 +47,20 @@
 
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px) {
+    flex-direction: column;
+
+    .profile_pic {
+      order: 1;
+
+      .bio {
+        overflow-wrap: break-word;
+      }
+    }
+
+    .profile_detail {
+      order: 2;
+    }
+
     img {
       width: 100px;
       height: 100px;
