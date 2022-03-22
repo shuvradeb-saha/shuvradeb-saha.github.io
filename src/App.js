@@ -1,10 +1,12 @@
-import logo from "./logo.svg";
-import "./App.css";
+import "./scss/app.scss";
+import { Header, Contents, Footer } from "./components";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">React App On Github Page!</header>
+      <Header />
+      <Contents />
+      <Footer />
     </div>
   );
 }

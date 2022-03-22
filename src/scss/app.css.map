@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": "ACEA,AAAA,OAAO,CAAC;EACN,MAAM,EAAE,GAAG;EACX,gBAAgB,EAAE,IAAI;CACvB;;AELD,AAAA,SAAS,CAAC;EACR,MAAM,EAAE,GAAG;EACX,gBAAgB,EAAE,OAAiB;CACpC;;ACHD,AAAA,OAAO,CAAC;EACN,MAAM,EAAE,GAAG;EACX,gBAAgB,EAAE,OAAkB;CACrC;;AJCD,AAAA,IAAI,CAAC;EAEH,gBAAgB,EAAE,SAAS;EAC3B,gBAAgB,EAAE,q4CAAq4C;CACx5C;;AAED,AAAA,IAAI,CAAC;EACH,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,IAAI;CACb",
+    "sources": [
+        "app.scss",
+        "header.scss",
+        "colors.scss",
+        "contents.scss",
+        "footer.scss"
+    ],
+    "names": [],
+    "file": "app.css"
+}
