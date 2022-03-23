@@ -10,6 +10,8 @@
     margin: -1px -15px;
     background-color: #808ea3;
     padding: 10px;
+    border-bottom: 1px solid;
+
     ul {
       list-style-type: none;
       padding: 0;
@@ -31,6 +33,32 @@
         font-weight: 500;
         text-decoration: none;
         color: rgba(43, 41, 41, 0.897);
+      }
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    font-size: 20px; // Todo => Make font size smaller for phone.
+
+    .section {
+      margin-top: 20px;
+
+      h3 {
+        margin: 0;
+        margin-bottom: 5px;
+      }
+
+      .degree {
+        margin-bottom: 15px;
+        margin-top: 15px;
+        div {
+          margin-top: 5px;
+          span {
+            margin-left: 5px;
+          }
+        }
       }
     }
   }
