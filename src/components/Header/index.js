@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
-import profilePic from "../../static/profile.jpg";
+import profilePic from "../../static/profile.png";
 
 const PROFILE_INFO = [
   { icon: faUser, value: "Shuvradeb Saha" },
