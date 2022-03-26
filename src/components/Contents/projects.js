@@ -26,10 +26,8 @@ const PROJECTS = Object.freeze([
   {
     name: "Inventory Management System",
     github: "https://github.com/shuvradeb-saha/uims_web",
-    description: `A web tool that allows any university department to keep track of their inventory and perform product requi-
-    sition operations. The application was built using the MVC pattern, used basic authentication for user access
-    management. A Software Requirement Analysis was carried out, as well as extensive documentation of rela-
-    tional database modeling, class-based modeling, and flow-oriented modeling was performed to complete the
+    description: `A web tool that allows any university department to keep track of their inventory and perform product requisition operations. The application was built using the MVC pattern, used basic authentication for user access
+    management. A Software Requirement Analysis was carried out, as well as extensive documentation of relational database modeling, class-based modeling, and flow-oriented modeling was performed to complete the
     project.`,
     tags: [
       "PHP",
@@ -45,7 +43,7 @@ const PROJECTS = Object.freeze([
     github: "https://github.com/shuvradeb-saha/TextEditor",
     description: `A Java-based lightweight Bengali text editor that supports the Bengali font. It has some basic features such as
     save, open, find, and replace, as well as syntax highlighting for a Bengali programming language called Potaka.
-    For text search inside the editor, I used the KMP string matching algorithm and a regular expression to high-
+    For text search inside the editor, I used the <i>KMP (Knuth Morris Pratt)</i> string matching algorithm and a regular expression to high-
     light the syntax.`,
     tags: ["Java", "Java Swing", "KMP", "Regex"],
   },
