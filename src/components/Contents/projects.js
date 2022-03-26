@@ -18,7 +18,7 @@ const PROJECTS = Object.freeze([
       "ReactJS",
       "Jwt",
       "Cosine Similarity",
-      "Randmized Algorithm",
+      "Randomized Algorithm",
       "NLP",
       "iText",
     ],
