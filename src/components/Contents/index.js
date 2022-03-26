@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Link, Route } from "react-router-dom";
 
-import { About, Academic } from "./contents";
+import { About, Academic, Projects } from "./contents";
 
 const ROUTES = Object.freeze({
   ABOUT: "/",
   ACADEMIC: "/academic",
+  PROJECTS: "/projects",
 });
 
 const SELECTED_COLOR = "#fffbfb";
@@ -27,7 +28,7 @@ export default function Content() {
             <Link
               onClick={() => setRoutes(ROUTES.ABOUT)}
               style={route === ROUTES.ABOUT ? { color: SELECTED_COLOR } : {}}
-              to="/"
+              to={ROUTES.ABOUT}
             >
               Home
             </Link>
@@ -36,17 +37,27 @@ export default function Content() {
             <Link
               onClick={() => setRoutes(ROUTES.ACADEMIC)}
               style={route === ROUTES.ACADEMIC ? { color: SELECTED_COLOR } : {}}
-              to="/academic"
+              to={ROUTES.ACADEMIC}
             >
               Academic
+            </Link>
+          </li>
+          <li>
+            <Link
+              onClick={() => setRoutes(ROUTES.PROJECTS)}
+              style={route === ROUTES.PROJECTS ? { color: SELECTED_COLOR } : {}}
+              to={ROUTES.PROJECTS}
+            >
+              Projects
             </Link>
           </li>
         </ul>
       </nav>
       <div style={{ padding: "15px" }}>
         <Routes>
-          <Route exact path="/" element={<About />} />
-          <Route exact path="/academic" element={<Academic />} />
+          <Route exact path={ROUTES.ABOUT} element={<About />} />
+          <Route exact path={ROUTES.ACADEMIC} element={<Academic />} />
+          <Route exact path={ROUTES.PROJECTS} element={<Projects />} />
         </Routes>
       </div>
     </div>

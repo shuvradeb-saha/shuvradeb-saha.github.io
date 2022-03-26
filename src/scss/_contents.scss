@@ -1,3 +1,14 @@
+.icon_text {
+  margin: 10px 0px;
+  .icon {
+    margin-left: 5px;
+    &.left {
+      margin-left: 0 !important;
+      margin-right: 5px !important;
+    }
+  }
+}
+
 .contents {
   background-color: $bg_main;
   border: 1px solid;
@@ -37,6 +48,7 @@
     }
   }
   .content {
+    margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
     text-align: justify;
@@ -58,6 +70,43 @@
           span {
             margin-left: 5px;
           }
+        }
+      }
+
+      .git_link {
+        margin: 8px 0px;
+
+        span {
+          font-weight: bold;
+          margin-right: 5px;
+        }
+
+        a {
+          text-decoration: none;
+          cursor: pointer;
+          word-break: break-all;
+          color: $khoyeri;
+        }
+      }
+
+      .tags {
+        align-self: center;
+        display: flex;
+        flex-wrap: wrap;
+
+        .tag_head {
+          font-weight: bold;
+          margin-right: 5px;
+          align-self: center;
+        }
+
+        .tag_item {
+          align-self: center;
+          background-color: $bg_body;
+          padding: 3px;
+          margin: 4px;
+          border-radius: 10px;
+          border: 2px solid;
         }
       }
     }
