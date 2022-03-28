@@ -59,7 +59,7 @@ const PROJECTS = Object.freeze([
 
 export default function Projects() {
   const renderProject = ({ name, github, description, tags }) => (
-    <div className="section">
+    <div key={name} className="section">
       <h3>{name}</h3>
       <div>{Parser(description)}</div>
       <div className="git_link">

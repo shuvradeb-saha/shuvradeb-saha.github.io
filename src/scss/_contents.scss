@@ -22,7 +22,14 @@
     background-color: #808ea3;
     padding: 10px;
     border-bottom: 1px solid;
-    overflow: scroll;
+    overflow-x: scroll;
+
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     ul {
       list-style-type: none;
