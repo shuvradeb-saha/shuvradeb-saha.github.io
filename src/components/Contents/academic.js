@@ -9,7 +9,7 @@ import {
 const EDUCATION = Object.freeze([
   {
     degree: "Bachelor of Science in Software Engineering (BSSE)",
-    year: 2019,
+    year: "December 2019",
     institute: "Institute of Information Technology, University of Dhaka",
   },
 
@@ -46,7 +46,7 @@ export default function Academic() {
     <div className="content">
       <div className="section">
         <h3>Education</h3>
-        {EDUCATION.map(renderDegree)}
+        {EDUCATION.slice(0, 1).map(renderDegree)}
       </div>
       <div className="section">
         <h3>Internship (January 2019 - June 2019)</h3>

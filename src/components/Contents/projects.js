@@ -64,7 +64,9 @@ export default function Projects() {
       <div>{Parser(description)}</div>
       <div className="git_link">
         <span>Github:</span>
-        <a href={github}>{github}</a>
+        <a target="_blank" href={github}>
+          {github}
+        </a>
       </div>
 
       <div className="tags">
