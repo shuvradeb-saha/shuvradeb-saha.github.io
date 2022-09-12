@@ -30,6 +30,7 @@
     text-align: center;
     img {
       border: 1.5px solid;
+      padding: 1px;
     }
 
     .bio {
@@ -82,7 +83,7 @@
   /* Medium devices (landscape tablets, 768px and up) */
   @media only screen and (min-width: 768px) {
     img {
-      width: 200px;
+      width: 180px;
       height: 200px;
       border-radius: 100px;
     }
@@ -91,7 +92,7 @@
   /* Large devices (laptops/desktops, 992px and up) */
   @media only screen and (min-width: 992px) {
     img {
-      width: 200px;
+      width: 180px;
       height: 200px;
       border-radius: 100px;
     }
@@ -100,7 +101,7 @@
   /* Extra large devices (large laptops and desktops, 1200px and up) */
   @media only screen and (min-width: 1200px) {
     img {
-      width: 200px;
+      width: 180px;
       height: 200px;
       border-radius: 100px;
     }

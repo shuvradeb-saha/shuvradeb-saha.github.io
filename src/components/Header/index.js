@@ -78,7 +78,7 @@ export default function Header() {
       </div>
 
       <div className="profile_pic">
-        <img width={200} height={200} src={profilePic} alt="Shuvradeb Saha" />
+        <img src={profilePic} alt="Shuvradeb Saha" />
         <div className="bio">
           <span>Programmer;</span>
           <span>Coffeeholic;</span>
