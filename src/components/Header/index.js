@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
-import profilePic from "../../static/profile.png";
+import profilePic from "../../static/resize.png";
 
 const PROFILE_INFO = [
   { icon: faUser, value: "Shuvradeb Saha" },
@@ -78,9 +78,9 @@ export default function Header() {
       </div>
 
       <div className="profile_pic">
-        <img src={profilePic} alt="Shuvradeb Saha" />
+        <img width={200} height={200} src={profilePic} alt="Shuvradeb Saha" />
         <div className="bio">
-          <span>Coder;</span>
+          <span>Programmer;</span>
           <span>Coffeeholic;</span>
           <span>Inquisitive</span>
         </div>
