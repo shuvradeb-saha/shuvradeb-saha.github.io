@@ -10,11 +10,12 @@ import {
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
 import profilePic from "../../static/resize.png";
+import email from "../../static/email.png";
 
 const PROFILE_INFO = [
   { icon: faUser, value: "Shuvradeb Saha" },
   { icon: faBriefcase, value: "Software Engineer" },
-  { icon: faEnvelope, value: "sahashuvradeb@gmail.com", isEmail: true },
+  { icon: faEnvelope, value: email, isEmail: true },
   { icon: faPhone, value: "+8801926359697", isPhone: true },
 ];
 
@@ -46,7 +47,8 @@ export default function Header() {
         </span>
         <span>
           {info.isEmail ? (
-            <a href={`mailto:${value}`}>{value}</a>
+            // <a href={`mailto:${value}`}>{value}</a>
+            <img id="email-png" src={value} alt="Email" />
           ) : info.isPhone ? (
             <a href={`tel:${value}`}>{value}</a>
           ) : (
