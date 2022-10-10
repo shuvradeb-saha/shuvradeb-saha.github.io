@@ -19,10 +19,10 @@ export default function About() {
         <h3>Interests</h3>
         <span>
           I am extremely interested in System Design and Architecture,
-          Distributed Systems, Devops and NLP(Natural Language Processing) and
-          eagerly looking forward to enriching my knowledge in those topics
-          whenever I get an opportunity. I also appreciate learning about new
-          technology and algorithms.
+          Distributed Systems, Devops, Machine Learning and NLP(Natural Language
+          Processing) and eagerly looking forward to enriching my knowledge in
+          those topics whenever I get an opportunity. I also appreciate learning
+          about new technology and algorithms.
         </span>
       </div>
     </div>
