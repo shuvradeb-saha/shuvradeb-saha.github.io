@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
-import profilePic from "../../static/resize.png";
+import profilePic from "../../static/profile.png";
 import email from "../../static/email.png";
 
 const PROFILE_INFO = [
@@ -47,7 +47,6 @@ export default function Header() {
         </span>
         <span>
           {info.isEmail ? (
-            // <a href={`mailto:${value}`}>{value}</a>
             <img id="email-png" src={value} alt="Email" />
           ) : info.isPhone ? (
             <a href={`tel:${value}`}>{value}</a>

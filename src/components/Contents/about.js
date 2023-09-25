@@ -18,11 +18,11 @@ export default function About() {
       <div className="section">
         <h3>Interests</h3>
         <span>
-          I am extremely interested in System Design and Architecture,
-          Distributed Systems, Devops, Machine Learning and NLP(Natural Language
-          Processing) and eagerly looking forward to enriching my knowledge in
-          those topics whenever I get an opportunity. I also appreciate learning
-          about new technology and algorithms.
+          I am extremely interested in Software Engineering, System Design and
+          Architecture, Software Security, Machine Learning and NLP(Natural
+          Language Processing) and eagerly looking forward to enriching my
+          knowledge in those topics whenever I get an opportunity. I also
+          appreciate learning about new technology and algorithms.
         </span>
       </div>
     </div>

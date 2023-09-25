@@ -46,7 +46,7 @@ export default function Academic() {
     <div className="content">
       <div className="section">
         <h3>Education</h3>
-        {EDUCATION.slice(0, 1).map(renderDegree)}
+        {EDUCATION.slice(0, 3).map(renderDegree)}
       </div>
       <div className="section">
         <h3>Internship (January 2019 - June 2019)</h3>
