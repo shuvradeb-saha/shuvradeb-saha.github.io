@@ -25,12 +25,12 @@ const SOCIAL_LINKS = [
   },
   {
     icon: faTwitter,
-    link: "#",
-    label: "Twitter",
+    link: "https://x.com/ShuvradebSaha",
+    label: "X (Twitter)",
   },
   {
     icon: faDev,
-    link: "#",
+    link: "https://dev.to/shuvradeb_saha_8ebebb3c3f",
     label: "Dev.to",
   },
 ];

@@ -8,7 +8,8 @@ import {
 import {
   faGithub,
   faLinkedinIn,
-  faTwitter
+  faTwitter,
+  faDev
 } from "@fortawesome/free-brands-svg-icons";
 
 export default function Contact() {
@@ -126,14 +127,25 @@ export default function Contact() {
               </a>
               
               <a 
-                href="#" 
+                href="https://x.com/ShuvradebSaha" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="social-card tech-card"
               >
                 <div className="card-glow"></div>
                 <FAIcon icon={faTwitter} style={{ color: 'var(--text-primary)' }} />
-                <span>Twitter</span>
+                <span>X (Twitter)</span>
+              </a>
+              
+              <a 
+                href="https://dev.to/shuvradeb_saha_8ebebb3c3f" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="social-card tech-card"
+              >
+                <div className="card-glow"></div>
+                <FAIcon icon={faDev} style={{ color: 'var(--text-primary)' }} />
+                <span>Dev.to</span>
               </a>
             </div>
           </div>
