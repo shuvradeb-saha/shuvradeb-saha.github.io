@@ -1,77 +1,116 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Link, Route } from "react-router-dom";
+import { Routes, Route, NavLink } from "react-router-dom";
+import { FontAwesomeIcon as FAIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHome,
+  faUserGraduate,
+  faCode,
+  faBriefcase,
+  faLaptopCode,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 
-import { About, Academic, Projects, JobExperience } from "./contents";
+import { 
+  About, 
+  Academic, 
+  Projects, 
+  JobExperience, 
+  Skills, 
+  Contact 
+} from "./contents";
 
 const ROUTES = Object.freeze({
   ABOUT: "/",
-  ACADEMIC: "/academic",
+  SKILLS: "/skills",
   PROJECTS: "/projects",
   JOBS: "/jobs",
+  ACADEMIC: "/academic",
+  CONTACT: "/contact",
 });
 
-const SELECTED_COLOR = "#fffbfb";
-
 export default function Content() {
-  const [route, setRoutes] = useState(ROUTES.ABOUT);
+  const [route, setRoute] = useState(ROUTES.ABOUT);
 
   useEffect(() => {
     const hashPath = window.location.hash;
     const route = hashPath.substring(1, hashPath.length);
-    setRoutes(route);
-  });
+    setRoute(route || ROUTES.ABOUT);
+  }, []);
 
   return (
     <div className="contents">
       <nav>
         <ul>
           <li>
-            <Link
-              onClick={() => setRoutes(ROUTES.ABOUT)}
-              style={route === ROUTES.ABOUT ? { color: SELECTED_COLOR } : {}}
+            <NavLink
+              onClick={() => setRoute(ROUTES.ABOUT)}
               to={ROUTES.ABOUT}
+              className={({ isActive }) => isActive ? "active" : ""}
             >
-              Home
-            </Link>
+              <FAIcon icon={faHome} /> About
+            </NavLink>
           </li>
+          
           <li>
-            <Link
-              onClick={() => setRoutes(ROUTES.ACADEMIC)}
-              style={route === ROUTES.ACADEMIC ? { color: SELECTED_COLOR } : {}}
-              to={ROUTES.ACADEMIC}
+            <NavLink
+              onClick={() => setRoute(ROUTES.SKILLS)}
+              to={ROUTES.SKILLS}
+              className={({ isActive }) => isActive ? "active" : ""}
             >
-              Academic
-            </Link>
+              <FAIcon icon={faLaptopCode} /> Skills
+            </NavLink>
           </li>
+          
           <li>
-            <Link
-              onClick={() => setRoutes(ROUTES.PROJECTS)}
-              style={route === ROUTES.PROJECTS ? { color: SELECTED_COLOR } : {}}
+            <NavLink
+              onClick={() => setRoute(ROUTES.PROJECTS)}
               to={ROUTES.PROJECTS}
+              className={({ isActive }) => isActive ? "active" : ""}
             >
-              Projects
-            </Link>
+              <FAIcon icon={faCode} /> Projects
+            </NavLink>
           </li>
 
           <li>
-            <Link
-              onClick={() => setRoutes(ROUTES.JOBS)}
-              style={route === ROUTES.JOBS ? { color: SELECTED_COLOR } : {}}
+            <NavLink
+              onClick={() => setRoute(ROUTES.JOBS)}
               to={ROUTES.JOBS}
+              className={({ isActive }) => isActive ? "active" : ""}
             >
-              Job Experience
-            </Link>
+              <FAIcon icon={faBriefcase} /> Experience
+            </NavLink>
+          </li>
+          
+          <li>
+            <NavLink
+              onClick={() => setRoute(ROUTES.ACADEMIC)}
+              to={ROUTES.ACADEMIC}
+              className={({ isActive }) => isActive ? "active" : ""}
+            >
+              <FAIcon icon={faUserGraduate} /> Education
+            </NavLink>
+          </li>
+          
+          <li>
+            <NavLink
+              onClick={() => setRoute(ROUTES.CONTACT)}
+              to={ROUTES.CONTACT}
+              className={({ isActive }) => isActive ? "active" : ""}
+            >
+              <FAIcon icon={faEnvelope} /> Contact
+            </NavLink>
           </li>
         </ul>
       </nav>
-      <div style={{ padding: "15px" }}>
-        <Routes>
-          <Route exact path={ROUTES.ABOUT} element={<About />} />
-          <Route exact path={ROUTES.ACADEMIC} element={<Academic />} />
-          <Route exact path={ROUTES.PROJECTS} element={<Projects />} />
-          <Route exact path={ROUTES.JOBS} element={<JobExperience />} />
-        </Routes>
-      </div>
+      
+      <Routes>
+        <Route path={ROUTES.ABOUT} element={<About />} />
+        <Route path={ROUTES.SKILLS} element={<Skills />} />
+        <Route path={ROUTES.PROJECTS} element={<Projects />} />
+        <Route path={ROUTES.JOBS} element={<JobExperience />} />
+        <Route path={ROUTES.ACADEMIC} element={<Academic />} />
+        <Route path={ROUTES.CONTACT} element={<Contact />} />
+      </Routes>
     </div>
   );
 }

@@ -2,73 +2,114 @@ import React from "react";
 import { FontAwesomeIcon as FAIcon } from "@fortawesome/react-fontawesome";
 import {
   faUserGraduate,
-  faInstitution,
-  faBuilding,
+  faUniversity,
+  faCalendarAlt,
+  faAward,
+  faBook
 } from "@fortawesome/free-solid-svg-icons";
 
 const EDUCATION = Object.freeze([
   {
     degree: "Bachelor of Science in Software Engineering (BSSE)",
-    year: "December 2019",
+    year: "2015 - 2019",
+    graduationDate: "December 2019",
     institute: "Institute of Information Technology, University of Dhaka",
+    achievements: [
+      "Completed with excellent academic standing",
+      "Participated in programming contests and hackathons",
+      "Conducted research on machine learning algorithms"
+    ],
+    courses: [
+      "Data Structures and Algorithms",
+      "Object-Oriented Programming",
+      "Database Systems",
+      "Software Engineering",
+      "Computer Networks",
+      "Operating Systems",
+      "Machine Learning",
+      "Web Engineering"
+    ]
   },
-
   {
     degree: "Higher Secondary Certificate (HSC)",
-    year: 2015,
+    year: "2013 - 2015",
+    graduationDate: "2015",
     institute: "Magura Govt. College",
+    achievements: [
+      "Achieved outstanding results in science subjects",
+      "Participated in national science competitions"
+    ]
   },
-
   {
     degree: "Secondary School Certificate (SSC)",
-    year: 2013,
+    year: "2011 - 2013",
+    graduationDate: "2013",
     institute: "Jagla H. M. High School, Magura",
-  },
+    achievements: [
+      "Graduated with distinction",
+      "Active member of the school's science club"
+    ]
+  }
 ]);
 
 export default function Academic() {
-  const renderDegree = ({ degree, year, institute }) => (
-    <div className="degree" key={degree}>
-      <div>
-        <FAIcon icon={faUserGraduate} />
-        <span>
-          {degree} - {year}
-        </span>
-      </div>
-      <div>
-        <FAIcon icon={faInstitution} />
-        <span>{institute}</span>
+  const renderEducation = ({ degree, year, graduationDate, institute, achievements, courses }) => (
+    <div className="section" key={degree}>
+      <div className="degree">
+        <h3 className="degree-title">
+          <FAIcon icon={faUserGraduate} /> {degree}
+        </h3>
+        
+        <div className="degree-info">
+          <FAIcon icon={faCalendarAlt} /> 
+          <span>{year}</span>
+        </div>
+        
+        <div className="degree-info">
+          <FAIcon icon={faUniversity} /> 
+          <span>{institute}</span>
+        </div>
+        
+        {achievements && (
+          <div className="degree-achievements">
+            <h4>
+              <FAIcon icon={faAward} /> Achievements
+            </h4>
+            <ul>
+              {achievements.map((achievement, index) => (
+                <li key={index}>{achievement}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        
+        {courses && (
+          <div className="degree-courses">
+            <h4>
+              <FAIcon icon={faBook} /> Key Courses
+            </h4>
+            <div className="tags">
+              {courses.map(course => (
+                <span key={course} className="tag-item">{course}</span>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
 
   return (
-    <div className="content">
+    <div className="content education" id="education">
       <div className="section">
         <h3>Education</h3>
-        {EDUCATION.slice(0, 3).map(renderDegree)}
+        <p>
+          My educational background has provided me with a strong foundation in software engineering
+          principles and practices. Below is a summary of my academic journey.
+        </p>
       </div>
-      <div className="section">
-        <h3>Internship (January 2019 - June 2019)</h3>
-        <div className="icon_text">
-          <span className="icon left">
-            <FAIcon icon={faBuilding} />
-          </span>
-          <span>
-            <b>Cefalo Bangladesh Ltd.</b>
-          </span>
-        </div>
-
-        <span>
-          As part of my academic curriculumn, I had worked as an intern in the
-          industry and spent a whole semester (6 months) there. During the
-          internship period I had studied several web technologies such as REST
-          API, MVC pettern, Spring Boot, and NodeJS followed by two capstone
-          projects. I also got acquaintanced with agile software development
-          model while working with a team and contributed on various feature
-          integration, improvement and bug fixes throughout the projects.
-        </span>
-      </div>
+      
+      {EDUCATION.map(renderEducation)}
     </div>
   );
 }

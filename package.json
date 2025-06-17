@@ -12,15 +12,15 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "html-react-parser": "^1.4.9",
-    "node-sass": "^7.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
+    "sass": "^1.69.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "scss": "node-sass -w ./src/scss -o ./src/css",
+    "scss": "sass --watch ./src/scss:./src/css",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
@@ -48,5 +48,8 @@
   },
   "devDependencies": {
     "gh-pages": "^3.2.3"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }

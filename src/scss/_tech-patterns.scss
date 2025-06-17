@@ -1,0 +1,213 @@
+/* Tech patterns and backgrounds */
+
+/* Tech dot pattern - light version */
+.light-theme .tech-pattern {
+  background-color: rgba(241, 245, 249, 0.8);
+  background-image: 
+    radial-gradient(rgba(67, 97, 238, 0.15) 1px, transparent 1px),
+    radial-gradient(rgba(58, 12, 163, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px, 30px 30px;
+  background-position: 0 0, 10px 10px;
+}
+
+/* Tech dot pattern - dark version */
+.dark-theme .tech-pattern {
+  background-color: rgba(15, 23, 42, 0.9);
+  background-image: 
+    radial-gradient(rgba(67, 97, 238, 0.2) 1px, transparent 1px),
+    radial-gradient(rgba(76, 201, 240, 0.15) 1px, transparent 1px);
+  background-size: 20px 20px, 30px 30px;
+  background-position: 0 0, 10px 10px;
+}
+
+/* Static dots for dark theme */
+.dark-theme .tech-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.15;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(var(--accent) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+}
+
+/* Static dots for light theme - different color for better visibility */
+.light-theme .tech-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.25;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(var(--primary) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+}
+
+/* Tech inspired card styling */
+.tech-card {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+    border-radius: calc(var(--radius-lg) + 2px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  &:hover::before {
+    opacity: 1;
+  }
+  
+  .card-glow {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    filter: blur(20px);
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    mix-blend-mode: screen;
+  }
+  
+  &:hover .card-glow {
+    opacity: 0.15;
+  }
+}
+
+/* Code line accents */
+.code-line {
+  position: relative;
+  padding-left: 1rem;
+  margin-left: 2rem;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0.5rem;
+    height: 120%;
+    transform: translateY(-50%);
+    background: linear-gradient(to bottom, var(--primary), var(--accent));
+    border-radius: 3px;
+  }
+}
+
+/* Adjust code-line for light theme for better visibility */
+.light-theme .code-line::before {
+  opacity: 0.8; /* Increased opacity for light theme */
+  width: 0.6rem; /* Slightly wider for light theme */
+  background: linear-gradient(to bottom, var(--secondary), var(--primary));
+}
+
+/* Tech-inspired section headers */
+.tech-header {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  
+  &::before {
+    content: '<';
+    font-family: var(--font-mono);
+    color: var(--primary);
+    opacity: 0.6;
+    position: absolute;
+    left: -1.2rem;
+  }
+  
+  &::after {
+    content: '/>';
+    font-family: var(--font-mono);
+    color: var(--primary);
+    opacity: 0.6;
+    position: absolute;
+    right: -1.5rem;
+  }
+}
+
+/* Adjust tech header for light theme */
+.light-theme h3::before,
+.light-theme h3::after {
+  opacity: 0.9 !important; /* Increase opacity for light theme */
+  color: var(--secondary) !important; /* Use secondary color for better contrast */
+  font-weight: bold !important;
+}
+
+
+
+/* Terminal-like typing animation */
+.typing-text {
+  overflow: hidden;
+  border-right: 2px solid var(--primary);
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--primary) }
+}
+
+/* Static dot pattern for section backgrounds */
+.tech-flow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Different opacity for dark vs light theme */
+.dark-theme .tech-flow {
+  opacity: 0.08;
+  background-image: radial-gradient(rgba(67, 97, 238, 0.5) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0;
+}
+
+.light-theme .tech-flow {
+  opacity: 0.15;
+  background-image: radial-gradient(rgba(58, 12, 163, 0.6) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0;
+}

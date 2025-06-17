@@ -1,5 +1,28 @@
-$primary: rgb(54, 134, 165);
-$black: #000;
-$bg_main: #cad6da;
-$bg_body: #c3cbceb0;
-$khoyeri: rgb(121, 31, 31);
+// Modern Tech Theme Colors
+$primary: #4361ee;  // Primary blue
+$secondary: #3a0ca3; // Secondary purple
+$accent: #4cc9f0;    // Accent cyan
+$success: #2ecc71;   // Success green
+$warning: #f39c12;   // Warning orange
+$danger: #e74c3c;    // Danger red
+
+// Dark Theme (default)
+$bg-dark: #0f172a;    // Dark background
+$card-dark: #1e293b;  // Slightly lighter card background
+$text-dark: #f8fafc;  // Light text for dark mode
+$text-muted-dark: #94a3b8; // Muted text for dark mode
+$border-dark: #334155; // Border color for dark mode
+
+// Light Theme
+$bg-light: #f1f5f9;    // Light background
+$card-light: #ffffff;  // Card background for light mode
+$text-light: #0f172a;  // Dark text for light mode
+$text-muted-light: #64748b; // Muted text for light mode
+$border-light: #e2e8f0; // Border color for light mode
+
+// Theme Variables (these will be switched between dark/light)
+$bg-body: $bg-dark;
+$bg-card: $card-dark;
+$text-primary: $text-dark;
+$text-muted: $text-muted-dark;
+$border-color: $border-dark;

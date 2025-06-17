@@ -1,0 +1,138 @@
+/* Add specific theme overrides here */
+.light-theme {
+  /* Button styles for light theme */
+  .btn {
+    color: white;  /* Ensure buttons always have white text for good contrast */
+  }
+  
+  .btn-outline {
+    color: var(--primary);
+    &:hover {
+      color: white;
+    }
+  }
+  
+  /* Ensure links have good contrast in light mode */
+  a {
+    color: var(--primary);
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+  
+  /* Specific card handling for light theme */
+  .card {
+    background-color: var(--card-light);
+    color: var(--text-light);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    /* Fix contrast for card text in What I Do section */
+    h4 {
+      color: var(--text-light);
+      font-weight: 600;
+    }
+    
+    p {
+      color: var(--text-light);
+    }
+    
+    /* Ensure icons are visible */
+    svg {
+      color: var(--primary) !important;
+    }
+  }
+  
+  /* Content section styles for light theme */
+  .content {
+    .section {
+      background-color: var(--card-light);
+      
+      h3 {
+        color: var(--text-light);
+      }
+      
+      p {
+        color: var(--text-light);
+      }
+    }
+    
+    /* Fix skills grid visibility */
+    .skills-grid {
+      .card {
+        border: 1px solid var(--border-light);
+        background-color: white;
+        
+        h4 {
+          color: var(--text-light);
+        }
+        
+        p {
+          color: var(--text-light);
+        }
+      }
+    }
+  }
+  
+  /* Fix navigation in light theme */
+  .contents {
+    nav {
+      background-color: var(--card-light);
+      border: 1px solid var(--border-light);
+      
+      ul li a {
+        color: var(--text-light);
+        
+        &:hover, &.active {
+          color: var(--primary);
+        }
+      }
+    }
+  }
+  
+  /* Theme toggle specific styles */
+  .theme-toggle {
+    background-color: var(--primary);
+    color: white;
+  }
+  
+  /* Improve contact icon visibility in light theme */
+  .contact-card {
+    .contact-icon {
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      color: white;
+      
+      svg {
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+      }
+    }
+  }
+  
+  /* Enhance contact icon visibility in light theme */
+  .contact-section {
+    .contact-icon {
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      border: 3px solid rgba(255, 255, 255, 0.8);
+    }
+    
+    .social-card svg {
+      color: var(--secondary) !important;
+    }
+  }
+}
+
+.dark-theme {
+  /* Any specific overrides for dark theme if needed */
+  .btn-outline {
+    &:hover {
+      color: white;
+    }
+  }
+  
+  /* Theme toggle specific styles */
+  .theme-toggle {
+    background-color: var(--primary);
+    color: white;
+  }
+}

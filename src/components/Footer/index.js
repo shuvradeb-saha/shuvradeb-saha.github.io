@@ -1,9 +1,15 @@
-import React from "react";
+
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+  
   return (
     <footer className="footer">
-      <small>&copy; Copyright 2025, Shuvradeb Saha</small>
+      
+        <div className="footer-bottom">
+          <p>&copy; {currentYear} Shuvradeb Saha. All rights reserved.</p>
+        </div>
+      
     </footer>
   );
 }

@@ -1,22 +1,30 @@
 import React from "react";
 import Parser from "html-react-parser";
+import { FontAwesomeIcon as FAIcon } from "@fortawesome/react-fontawesome";
+import { 
+  faGithub, 
+  faChrome 
+} from "@fortawesome/free-brands-svg-icons";
+import { 
+  faCode, 
+  faExternalLinkAlt 
+} from "@fortawesome/free-solid-svg-icons";
 
 const PROJECTS = Object.freeze([
   {
     name: "Question Bank",
     github: "https://github.com/shuvradeb-saha/question-bank",
-    description: `A restful web application for question management and automatic
-    question paper generation, with a recommendation system that suggests
-    similar document to the user. Followed the SDLC paradigm with
-    client-server architecture for completing the whole project. The
-    similar document recommendation was implemented using
-    <i> cosine-similarity</i> with tf-idf transformation and used
-    randomized algorithm while implementing the automatic question paper
-    generation.`,
+    liveDemo: null,
+    image: "https://via.placeholder.com/600x400?text=Question+Bank",
+    description: `A comprehensive web application for question management and automatic
+    question paper generation, featuring a recommendation system for similar documents.
+    The project follows the SDLC paradigm with a client-server architecture.
+    The recommendation system utilizes <i>cosine-similarity</i> with tf-idf transformation,
+    while the question paper generation implements a randomized algorithm for optimal selection.`,
     tags: [
       "Spring Boot",
       "ReactJS",
-      "Jwt",
+      "JWT",
       "Cosine Similarity",
       "Randomized Algorithm",
       "NLP",
@@ -26,9 +34,12 @@ const PROJECTS = Object.freeze([
   {
     name: "Inventory Management System",
     github: "https://github.com/shuvradeb-saha/uims_web",
-    description: `A web tool that allows any university department to keep track of their inventory and perform product requisition operations. The application was built using the MVC pattern, used basic authentication for user access
-    management. A Software Requirement Analysis was carried out, as well as extensive documentation of relational database modeling, class-based modeling, and flow-oriented modeling was performed to complete the
-    project.`,
+    liveDemo: null,
+    image: "https://via.placeholder.com/600x400?text=Inventory+Management",
+    description: `A comprehensive web tool that enables university departments to track inventory
+    and manage product requisitions efficiently. Built using the MVC pattern with basic authentication
+    for access control. The project involved extensive Software Requirement Analysis, relational database modeling,
+    class-based modeling, and flow-oriented modeling to ensure a robust and maintainable system.`,
     tags: [
       "PHP",
       "JavaScript",
@@ -41,42 +52,69 @@ const PROJECTS = Object.freeze([
   {
     name: "Bengali Text Editor",
     github: "https://github.com/shuvradeb-saha/TextEditor",
-    description: `A Java-based lightweight Bengali text editor that supports the Bengali font. It has some basic features such as
-    save, open, find, and replace, as well as syntax highlighting for a Bengali programming language called Potaka.
-    For text search inside the editor, I used the <i>KMP (Knuth Morris Pratt)</i> string matching algorithm and a regular expression to high-
-    light the syntax.`,
-    tags: ["Java", "Java Swing", "KMP", "Regex"],
+    liveDemo: null,
+    image: "https://via.placeholder.com/600x400?text=Bengali+Text+Editor",
+    description: `A lightweight Java-based text editor with support for Bengali fonts and the Potaka
+    programming language. Features include file operations (save, open), text search and replace functionality,
+    and syntax highlighting. The text search functionality was implemented using the <i>KMP (Knuth Morris Pratt)</i>
+    algorithm, while syntax highlighting was achieved through regular expressions.`,
+    tags: ["Java", "Java Swing", "KMP Algorithm", "Regular Expressions"],
   },
   {
-    name: "Gomoku",
+    name: "Gomoku (Five in a Row)",
     github: "https://github.com/shuvradeb-saha/gomoku_five",
-    description: `Five in a row, often known as Gomoku, is a game project. There are two modes: one for two players and one for AI. 
-    There are three different themes in the game. JavaFx was used to create the user interface. The artificial intelligence component 
-    was created with the help of the minimax algorithm and alpha-beta pruning.`,
-    tags: ["Java", "JavaFx", "Thread", "AI", "Minimax"],
+    liveDemo: null,
+    image: "https://via.placeholder.com/600x400?text=Gomoku+Game",
+    description: `An interactive implementation of Gomoku (Five in a Row), featuring both two-player and AI modes
+    with three distinct visual themes. The user interface was built using JavaFX for a smooth gaming experience.
+    The AI opponent was developed using the minimax algorithm with alpha-beta pruning for efficient decision-making,
+    providing a challenging gameplay experience.`,
+    tags: ["Java", "JavaFX", "Threading", "AI", "Minimax Algorithm", "Alpha-Beta Pruning"],
   },
 ]);
 
 export default function Projects() {
-  const renderProject = ({ name, github, description, tags }) => (
-    <div key={name} className="section">
-      <h3>{name}</h3>
-      <div>{Parser(description)}</div>
-      <div className="git_link">
-        <span>Github:</span>
-        <a target="_blank" href={github}>
-          {github}
-        </a>
+  const renderProject = ({ name, github, liveDemo, image, description, tags }) => (
+    <div key={name} className="section project-card">
+      <div className="project-header">
+        <h3>{name}</h3>
+        
+        <div className="project-links">
+          <a href={github} target="_blank" rel="noopener noreferrer">
+            <FAIcon icon={faGithub} /> GitHub
+          </a>
+          {liveDemo && (
+            <a href={liveDemo} target="_blank" rel="noopener noreferrer">
+              <FAIcon icon={faExternalLinkAlt} /> Live Demo
+            </a>
+          )}
+        </div>
       </div>
-
-      <div className="tags">
-        <span className="tag_head">Technologies:</span>
-        {tags.map((tag) => (
-          <span className="tag_item">{tag}</span>
-        ))}
+      
+      <div className="project-description">
+        {Parser(description)}
+      </div>
+      
+      <div className="project-footer">
+        <div className="tags">
+          {tags.map((tag) => (
+            <span key={tag} className="tag-item">{tag}</span>
+          ))}
+        </div>
       </div>
     </div>
   );
 
-  return <div className="content">{PROJECTS.map(renderProject)}</div>;
+  return (
+    <div className="content" id="projects">
+      <div className="section">
+        <h3>Projects</h3>
+        <p>
+          Here are some of the notable projects I've worked on. Each project represents a unique challenge that helped me grow as a developer.
+        </p>
+      </div>
+      
+      {PROJECTS.map(renderProject)}
+    </div>
+  );
 }

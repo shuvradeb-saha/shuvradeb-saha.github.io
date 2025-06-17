@@ -1,95 +1,94 @@
 import React from "react";
 import { FontAwesomeIcon as FAIcon } from "@fortawesome/react-fontawesome";
 import {
-  faUser,
-  faBriefcase,
-  faEnvelope,
-  faPhone,
-  faEarth,
+  faDownload,
 } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { 
+  faGithub, 
+  faLinkedinIn, 
+  faTwitter,
+  faDev 
+} from "@fortawesome/free-brands-svg-icons";
 
 import profilePic from "../../static/profile.png";
-import email from "../../static/email.png";
 
-const PROFILE_INFO = [
-  { icon: faUser, value: "Shuvradeb Saha" },
-  { icon: faBriefcase, value: "Software Engineer" },
-  { icon: faEnvelope, value: email, isEmail: true },
-  { icon: faPhone, value: "+8801926359697", isPhone: true },
-];
-
-const SOCIAL_SITE_INFO = [
+const SOCIAL_LINKS = [
   {
     icon: faGithub,
     link: "https://github.com/shuvradeb-saha",
-    label: "github.com/shuvradeb-saha",
+    label: "GitHub",
   },
   {
     icon: faLinkedinIn,
     link: "https://www.linkedin.com/in/shuvradeb-saha-a093aa158/",
-    label: "linkedin.com/shuvradeb-saha",
+    label: "LinkedIn",
   },
   {
-    icon: faEarth,
-    link: "https://shuvradeb-saha.github.io/",
-    label: "shuvradeb-saha.github.io",
+    icon: faTwitter,
+    link: "#",
+    label: "Twitter",
+  },
+  {
+    icon: faDev,
+    link: "#",
+    label: "Dev.to",
   },
 ];
 
 export default function Header() {
-  const renderPersonInfo = (info) => {
-    const { icon, value } = info;
-    return (
-      <div key={value} className="profile_item">
-        <span>
-          <FAIcon icon={icon} />
-        </span>
-        <span>
-          {info.isEmail ? (
-            <img id="email-png" src={value} alt="Email" />
-          ) : info.isPhone ? (
-            <a href={`tel:${value}`}>{value}</a>
-          ) : (
-            value
-          )}
-        </span>
-      </div>
-    );
-  };
-
-  const renderSiteInfo = ({ icon, link, label }) => (
-    <div key={label} className="profile_item">
-      <span>
-        <FAIcon icon={icon} />
-      </span>
-      <span>
-        <a target="_blank" href={link}>
-          {label}
-        </a>
-      </span>
-    </div>
-  );
-
   return (
     <header className="header">
-      <div className="profile_detail">
-        <h2>Contact</h2>
-        {PROFILE_INFO.map(renderPersonInfo)}
-      </div>
-
-      <div className="profile_pic">
-        <img src={profilePic} alt="Shuvradeb Saha" />
-        <div className="bio">
-          <span>Programmer;</span>
-          <span>Coffeeholic;</span>
-          <span>Inquisitive</span>
+      <div className="hero">
+        <div className="hero-content">
+          <span className="greeting">Hello, I'm</span>
+          <h1>Shuvradeb Saha</h1>
+          <p className="subtitle">Software Engineer</p>
+          
+          <p className="hero-text">
+            A passionate software developer with experience in full-stack development.
+            I specialize in building robust and scalable web applications with modern technologies.
+            Currently working at Cefalo Bangladesh Ltd.
+          </p>
+          
+          <div className="cta-buttons">
+            <a href="#/contact" className="btn">
+              Contact Me
+            </a>
+            <a href="/resume.pdf" className="btn btn-outline" download>
+              <FAIcon icon={faDownload} /> Resume
+            </a>
+          </div>
+          
+          <div className="social-links">
+            {SOCIAL_LINKS.map((social) => (
+              <a 
+                key={social.label} 
+                href={social.link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label={social.label}
+              >
+                <FAIcon icon={social.icon} />
+              </a>
+            ))}
+          </div>
+          
+          <div className="tech-stack">
+            <span>Tech Stack |</span>
+            <div className="tech-icons">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className="profile_detail">
-        <h2>More</h2>
-        {SOCIAL_SITE_INFO.map(renderSiteInfo)}
+        
+        <div className="hero-image">
+          <div className="blob"></div>
+          <img src={profilePic} alt="Shuvradeb Saha" />
+        </div>
       </div>
     </header>
   );
