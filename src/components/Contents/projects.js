@@ -12,6 +12,37 @@ import {
 
 const PROJECTS = Object.freeze([
   {
+    name: "Image Portal",
+    github: null,
+    liveDemo: null,
+    image: "https://via.placeholder.com/600x400?text=Image+Portal",
+    description: `A media distribution platform that enables the licensing and selling of images and videos for NTB. Handles millions of assets efficiently via high-performance APIs and user-friendly interfaces.`,
+    tags: [
+      "Java",
+      "Spring Boot",
+      "NextJS",
+      "Auth0",
+      "JWT",
+      "OpenFGA",
+      "TeamCity"
+    ],
+  },
+  {
+    name: "Media Manager",
+    github: null,
+    liveDemo: null,
+    description: `A digital asset management system designed to store, index, and manage millions of digital assets. Provides seamless media upload, download, and search capabilities. Serves as the core backend platform for media storage and retrieval for NTB.`,
+    tags: [
+      "Java",
+      "Spring Boot",
+      "ReactJS",
+      "Auth0",
+      "Postgres",
+      "Opensearch",
+      "Liquibase"
+    ],
+  },
+  {
     name: "Question Bank",
     github: "https://github.com/shuvradeb-saha/question-bank",
     liveDemo: null,
@@ -79,16 +110,16 @@ export default function Projects() {
       <div className="project-header">
         <h3>{name}</h3>
         
-        <div className="project-links">
-          <a href={github} target="_blank" rel="noopener noreferrer">
+       {(github || liveDemo) && <div className="project-links">
+         {github && <a href={github} target="_blank" rel="noopener noreferrer">
             <FAIcon icon={faGithub} /> GitHub
-          </a>
+          </a>}
           {liveDemo && (
             <a href={liveDemo} target="_blank" rel="noopener noreferrer">
               <FAIcon icon={faExternalLinkAlt} /> Live Demo
             </a>
           )}
-        </div>
+        </div>}
       </div>
       
       <div className="project-description">

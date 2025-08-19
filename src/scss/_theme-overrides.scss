@@ -58,7 +58,7 @@
     
     /* Fix skills grid visibility */
     .skills-grid {
-      .card {
+      .skill-category {
         border: 1px solid var(--border-light);
         background-color: white;
         
@@ -66,8 +66,16 @@
           color: var(--text-light);
         }
         
-        p {
-          color: var(--text-light);
+        .skills-grid-items {
+          .skill-item {
+            .skill-name {
+              color: var(--text-light);
+            }
+            
+            &:hover {
+              background-color: rgba(var(--primary-rgb), 0.05);
+            }
+          }
         }
       }
     }

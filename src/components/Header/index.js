@@ -45,8 +45,8 @@ export default function Header() {
           <p className="subtitle">Software Engineer</p>
           
           <p className="hero-text">
-            A passionate software developer with experience in full-stack development.
-            I specialize in building robust and scalable web applications with modern technologies.
+            A passionate Software Engineer with 6+ years of full-stack development experience. 
+            I specialize in building scalable and secure web applications using modern technologies. 
             Currently working at Cefalo Bangladesh Ltd.
           </p>
           
@@ -54,7 +54,7 @@ export default function Header() {
             <a href="#/contact" className="btn">
               Contact Me
             </a>
-            <a href="/resume.pdf" className="btn btn-outline" download>
+            <a href="https://drive.google.com/file/d/1kKGhiCHQsEVMpKdpANA01E2tc9Mv9YzY/view?usp=sharing" className="btn btn-outline" target="_blank" rel="noopener noreferrer">
               <FAIcon icon={faDownload} /> Resume
             </a>
           </div>

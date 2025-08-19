@@ -19,7 +19,7 @@ const EXPERIENCE = [
     achievements: [
       "Led the development of key features that improved application performance by 40%",
       "Implemented CI/CD pipelines that reduced deployment time by 50%",
-      "Mentored junior developers and conducted code reviews to ensure code quality",
+      "Conducted code reviews to ensure code quality",
       "Collaborated with cross-functional teams to deliver projects on time and within scope"
     ]
   },

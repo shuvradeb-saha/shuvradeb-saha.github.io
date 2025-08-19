@@ -11,14 +11,9 @@ import {
 const EDUCATION = Object.freeze([
   {
     degree: "Bachelor of Science in Software Engineering (BSSE)",
-    year: "2015 - 2019",
+    year: "2016 - 2019",
     graduationDate: "December 2019",
     institute: "Institute of Information Technology, University of Dhaka",
-    achievements: [
-      "Completed with excellent academic standing",
-      "Participated in programming contests and hackathons",
-      "Conducted research on machine learning algorithms"
-    ],
     courses: [
       "Data Structures and Algorithms",
       "Object-Oriented Programming",
@@ -35,20 +30,12 @@ const EDUCATION = Object.freeze([
     year: "2013 - 2015",
     graduationDate: "2015",
     institute: "Magura Govt. College",
-    achievements: [
-      "Achieved outstanding results in science subjects",
-      "Participated in national science competitions"
-    ]
   },
   {
     degree: "Secondary School Certificate (SSC)",
     year: "2011 - 2013",
     graduationDate: "2013",
     institute: "Jagla H. M. High School, Magura",
-    achievements: [
-      "Graduated with distinction",
-      "Active member of the school's science club"
-    ]
   }
 ]);
 
@@ -62,12 +49,12 @@ export default function Academic() {
         
         <div className="degree-info">
           <FAIcon icon={faCalendarAlt} /> 
-          <span>{year}</span>
+          <span style={{marginLeft: '0.5rem'}}>{year}</span>
         </div>
         
         <div className="degree-info">
           <FAIcon icon={faUniversity} /> 
-          <span>{institute}</span>
+          <span style={{marginLeft: '0.5rem'}}>{institute}</span>
         </div>
         
         {achievements && (
@@ -86,7 +73,7 @@ export default function Academic() {
         {courses && (
           <div className="degree-courses">
             <h4>
-              <FAIcon icon={faBook} /> Key Courses
+              <FAIcon icon={faBook} /> <span style={{marginLeft: '0.5rem'}}>Key Courses</span>
             </h4>
             <div className="tags">
               {courses.map(course => (
