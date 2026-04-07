@@ -2,15 +2,29 @@ import React from "react";
 import Parser from "html-react-parser";
 import { FontAwesomeIcon as FAIcon } from "@fortawesome/react-fontawesome";
 import { 
-  faGithub, 
-  faChrome 
+  faGithub 
 } from "@fortawesome/free-brands-svg-icons";
 import { 
-  faCode, 
   faExternalLinkAlt 
 } from "@fortawesome/free-solid-svg-icons";
 
 const PROJECTS = Object.freeze([
+  {
+    name: "Meeting Minutes",
+    github: null,
+    liveDemo: null,
+    image: "https://via.placeholder.com/600x400?text=Meeting+Minutes",
+    description: `Meeting Minutes is an AI-powered meeting management application that helps users upload meeting recordings, generate concise summaries, review past discussions, and ask contextual questions about each meeting through an interactive chat interface.`,
+    tags: ["spring boot", "python", "LLM", "OpenAI Whisper"],
+  },
+  {
+    name: "OpenFGA Explorer",
+    github: null,
+    liveDemo: "https://chromewebstore.google.com/detail/openfga-explorer/fdmhddpmheagffmolholokdjlciojbhp",
+    image: "https://via.placeholder.com/600x400?text=OpenFGA+Explorer",
+    description: `An OpenFGA-focused Chrome extension that helps developers inspect and manage authorization stores, models, and tuples across development, test, and production environments, replacing repetitive <i>curl</i> and Postman workflows with a streamlined UI.`,
+    tags: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+  },
   {
     name: "Image Portal",
     github: null,
