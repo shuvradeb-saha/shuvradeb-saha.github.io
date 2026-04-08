@@ -118,9 +118,20 @@
     }
     
     // Project cards
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+
+      @media (max-width: 900px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .project-card {
       padding: 0;
       overflow: hidden;
+      height: 100%;
       
       .project-header {
         padding: 1.5rem;

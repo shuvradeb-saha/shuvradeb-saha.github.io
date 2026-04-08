@@ -158,8 +158,10 @@ export default function Projects() {
           Here are some of the notable projects I've worked on. Each project represents a unique challenge that helped me grow as a developer.
         </p>
       </div>
-      
-      {PROJECTS.map(renderProject)}
+
+      <div className="projects-grid">
+        {PROJECTS.map(renderProject)}
+      </div>
     </div>
   );
 }
